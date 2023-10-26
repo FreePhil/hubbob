@@ -7,6 +7,7 @@ class User {
     String homepage
     Date dateCreated
 
+    static hasMany = [posts: Post, tags: Tag, following: User]
     static hasOne = [profile: Profile]
     static constraints = {
         loginId size: 3..20, unique: true, nullable: false, matches: /[0-9]{7}[A-Za-z]*/

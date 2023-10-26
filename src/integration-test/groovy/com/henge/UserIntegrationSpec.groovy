@@ -21,7 +21,7 @@ class UserIntegrationSpec extends Specification {
         when: "The user is saved"
             joe.save()
 
-        then: "It shoud save successfully and can be retrieved from database"
+        then: "It should save successfully and can be retrieved from database"
             joe.errors.errorCount == 0
             joe.id != null
             User.get(joe.id).loginId == joe.loginId
