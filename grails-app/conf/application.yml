@@ -3,6 +3,8 @@ grails:
     profile: web
     codegen:
         defaultPackage: com.henge
+    resources:
+        pattern: '/**'
     gorm:
         reactor:
             # Whether to translate GORM events into Reactor events
