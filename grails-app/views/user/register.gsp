@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Register new user</h1>
+  <g:hasErrors>
+    <div class="errors">
+      <g class="renderErrors" bean="${user}" as="list" />
+    </div>
+  </g:hasErrors>
+  <g:if test="${flash.message}">
+    <div class="flash">${flash.message}</div>
+  </g:if>
+  <g:form action="register">
+    <fieldset class="form">
+      <div class="fieldcontain required">
+        <label for="loginId">Login ID</label>
+        <g:textField name="loginId" value="${user?.loginId}"/>
+      </div>
+      <div class="fieldcontain required">
+        <label for="password">Password</label>
+        <g:passwordField name="password" />
+      </div>
+      <div class="fieldcontain required">
+        <label for="profile.fullName">Full Name</label>
+        <g:textField name="profile.fullName"
+                     value="${user?.profile?.fullName}"/>
+      </div>
+      <div class="fieldcontain required">
+        <label for="profile.bio">Bio</label>
+        <g:textArea name="profile.bio"
+                    value="${user?.profile?.bio}"/>
+      </div>
+      <div class="fieldcontain required">
+        <label for="profile.email">Email</label>
+        <g:textField name="profile.email"
+                     value="${user?.profile?.email}"/>
+      </div>
+    </fieldset>
+    <fieldset class="buttons">
+      <g:submitButton name="register" value="Register"/>
+    </fieldset>
+  </g:form>
+</body>
+</html>

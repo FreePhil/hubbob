@@ -10,9 +10,9 @@ class User {
     static hasMany = [posts: Post, tags: Tag, following: User]
     static hasOne = [profile: Profile]
     static constraints = {
-        loginId size: 3..20, unique: true, nullable: false, matches: /[0-9]{1,3}[A-Za-z]*/
+        loginId size: 3..20, unique: true, nullable: false, matches: /.*/
         password size: 6..20, nullable: false, validator: { password, user -> user.loginId != password }
-        homepage url: true, nulllable: true
+        homepage nulllable: true
         profile nullable: true
         tags()
         posts()
