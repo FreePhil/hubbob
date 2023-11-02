@@ -9,6 +9,11 @@ class UrlMappings {
             }
         }
 
+        "/timeline/$id" {
+            controller = "user"
+            action = "timeline"
+        }
+
         "/"(view:"/index")
         "500"(view:'/error')
         "404"(view:'/notFound')
